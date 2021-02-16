@@ -4,7 +4,7 @@ server.use(express.json());
 
 const carRouter = require("../api/cars/cars-router");
 
-server.use("api/cars", carRouter);
+server.use("/api/cars", carRouter);
 
 server.get("/", (_, res) => {
   res.send("👺👺👺 It's Alive 👺👺👺");
