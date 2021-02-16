@@ -6,7 +6,7 @@
     "scripts": {
         "start": "node index.js",
         "server": "nodemon index.js",
-        "migratedb": "knex migrate:lastest",
+        "migratedb": "knex migrate:latest",
         "rollbackdb": "knex migrate:rollback",
         "seed": "knex seed:run"
     },
