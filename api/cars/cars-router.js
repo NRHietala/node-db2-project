@@ -23,4 +23,13 @@ router.post("/", (req, res, next) => {
     next(error);
   }
 });
+
+router.use((error, req, res, next) => {
+  res.status(500).json({
+    info: "Error occurred inside accountsRouter",
+    message: error.message,
+    stack: error.stack,
+  });
+});
+
 module.exports = router;
