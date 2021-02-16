@@ -4,14 +4,15 @@
     "description": "Node DB 2 Module Challenge",
     "main": "index.js",
     "scripts": {
-        "start":"node index.js",
+        "start": "node index.js",
         "server": "nodemon index.js",
-        "migratedb":"knex migrate:lastest",
-        "rollbackdb":"knex migrate:rollback",
-        "seed":"knex seed:run"
+        "migratedb": "knex migrate:lastest",
+        "rollbackdb": "knex migrate:rollback",
+        "seed": "knex seed:run"
     },
     "author": "Lambda School",
     "devDependencies": {
+        "eslint": "^7.20.0",
         "nodemon": "^2.0.2"
     },
     "dependencies": {
