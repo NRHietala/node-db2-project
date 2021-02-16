@@ -1,7 +1,7 @@
 const express = require("express");
-const router = express.Router();
-
 const Car = require("./cars-model");
+
+const router = express.Router();
 
 router.get("/", async (req, res, next) => {
   try {
@@ -12,15 +12,20 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/:id", (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
   try {
+    const { id } = req.params;
+    const data = await Car.getById(id);
+    res.json(data);
   } catch (error) {
     next(error);
   }
 });
 
-router.post("/", (req, res, next) => {
+router.post("/", async (req, res, next) => {
   try {
+    const data = await Car.insert(req.body);
+    res.json(data);
   } catch (error) {
     next(error);
   }
