@@ -33,7 +33,7 @@ router.post("/", async (req, res, next) => {
 
 router.use((error, req, res, next) => {
   res.status(500).json({
-    info: "Error occurred inside accountsRouter",
+    info: "Error occurred inside carRouter",
     message: error.message,
     stack: error.stack,
   });
